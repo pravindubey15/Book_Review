@@ -11,6 +11,7 @@ public class Book {
     private Integer id;
     private String name;
     private String review;
+    //private String auther;
 
     public Integer getId() {
         return id;

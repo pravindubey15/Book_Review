@@ -34,6 +34,16 @@ public class BookController {
     bookRepository.deleteById(id);
     return ResponseEntity.ok("Done");
 }
+@PutMapping("/update/{id}")
+    public ResponseEntity<String> getUpdate(@PathVariable Integer id, Book bk){
+        if(!bookRepository.existsById(id)){
+            return ResponseEntity.ok("Not found");
+        }
+        bk.setId(id);
+        bookRepository.save(bk);
+        return ResponseEntity.ok("Successfully update in Database");
+
+}
 
 }
 
